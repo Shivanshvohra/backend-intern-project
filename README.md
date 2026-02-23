@@ -1,9 +1,9 @@
-Scalable REST API with Authentication & Role-Based Access
+# Scalable REST API with Authentication & Role-Based Access
 
 This project is a full-stack scalable REST API system built as part of a Backend Developer Internship assignment. It demonstrates secure authentication, role-based authorization, modular architecture, cloud database integration, and a React frontend for API interaction.
 
-Tech Stack
-Backend
+# Tech Stack
+# Backend
 
 Node.js
 
@@ -19,7 +19,7 @@ Swagger (API Documentation)
 
 pg (Connection Pooling)
 
-Frontend
+# Frontend
 
 React (Vite)
 
@@ -27,8 +27,8 @@ Axios
 
 React Router
 
-Features
-Authentication
+# Features
+# Authentication
 
 User Registration with hashed passwords
 
@@ -38,7 +38,7 @@ Token expiration (1 hour)
 
 Stateless authentication
 
-Role-Based Access Control
+# Role-Based Access Control
 
 Two roles: USER and ADMIN
 
@@ -46,7 +46,7 @@ Middleware-based authorization
 
 Admin-only route protection
 
-Task Management (CRUD)
+# Task Management (CRUD)
 
 Create Task
 
@@ -58,41 +58,22 @@ Delete Task
 
 Ownership validation (users cannot modify others’ tasks)
 
-API Documentation
+# API Documentation
 
-Swagger UI available at:
+# Swagger UI available at:
+
 http://localhost:5000/api-docs
 
-Project Structure
-
-backend/
-    src/
-        modules/
-            auth/
-            task/
-        middleware/
-        config/
-    package.json
-
-frontend/
-    src/
-        pages/
-        context/
-        services/
-    package.json
-
-Setup Instructions
-1. Clone Repository
-
+# Setup Instructions
+clone Repository
 git clone <your-repo-url>
 cd backend-intern-project
 
-2. Backend Setup
-
+Backend Setup
 cd backend
 npm install
 
-Create a .env file inside backend folder:
+Create a .env file inside the backend folder:
 
 DATABASE_URL=your_neon_connection_string
 JWT_SECRET=your_secret_key
@@ -102,13 +83,12 @@ Run backend:
 
 npm run dev
 
-Swagger documentation:
+Swagger documentation available at:
 
 http://localhost:5000/api-docs
 
-3. Frontend Setup
-
-cd ../frontend/frontend
+Frontend Setup
+cd ../frontend
 npm install
 npm run dev
 
@@ -116,7 +96,7 @@ Frontend runs at:
 
 http://localhost:5173
 
-Security Practices Implemented
+# Security Practices Implemented
 
 Password hashing using bcrypt
 
@@ -132,11 +112,11 @@ Centralized error handling
 
 Secure cloud database connection (SSL enabled)
 
-Scalability Considerations
+# Scalability Considerations
 
 This project is designed with scalability and production-readiness in mind.
 
-Docker Containerization
+# Docker Containerization
 
 Backend can be containerized using Docker
 
@@ -146,7 +126,7 @@ Enables easy deployment on cloud platforms
 
 Supports horizontal scaling behind a load balancer
 
-Redis Caching (Future Integration)
+# Redis Caching (Future Integration)
 
 Frequently accessed endpoints (e.g., GET /tasks) can be cached using Redis
 
@@ -158,7 +138,7 @@ Can support token blacklisting and rate limiting
 
 Enhances overall performance and scalability
 
-Database Optimization
+# Database Optimization
 
 Indexed columns (email, user_id)
 
@@ -170,29 +150,29 @@ ON DELETE CASCADE to prevent orphan records
 
 Cloud-hosted PostgreSQL for production reliability
 
-Microservices-Ready Architecture
+# API Endpoints
+# Auth
+POST   /api/v1/auth/register
+POST   /api/v1/auth/login
+# Tasks
+POST     /api/v1/tasks
+GET      /api/v1/tasks
+PUT      /api/v1/tasks/:id
+DELETE   /api/v1/tasks/:id
+# Conclusion
 
-Modular folder structure (auth, tasks, middleware)
+This project demonstrates:
 
-Easily separable into independent services
+Secure backend design principles
 
-Stateless JWT authentication allows horizontal scaling
+Role-based access control
 
-Clean controller-service separation for maintainability
+RESTful API development
 
-API Endpoints
-Auth
+Cloud database integration
 
-POST /api/v1/auth/register
-POST /api/v1/auth/login
+Frontend integration
 
-Tasks
+Scalable architecture considerations
 
-POST /api/v1/tasks
-GET /api/v1/tasks
-PUT /api/v1/tasks/:id
-DELETE /api/v1/tasks/:id
-
-Conclusion
-
-This project demonstrates secure backend design principles, role-based access control, RESTful API development, cloud database integration, frontend integration, and scalable architecture considerations suitable for production deployment.
+It is suitable for production deployment and reflects real-world backend engineering best practices.
